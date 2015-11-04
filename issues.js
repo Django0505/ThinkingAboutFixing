@@ -27,13 +27,14 @@ exports.update = function (req, res) {
 
         connection.query("update issues set ? where id = ?", [data, req.params.id], function(err, results){
             // what will happen here?
+            console.log(data);
             return res.redirect("/issues");
         });
     });
 }
 
 exports.showAdd = function (req, res) {
-    res.render('isue')
+    res.render('issue')
 }
 
 exports.add = function (req, res) {
@@ -44,6 +45,7 @@ exports.add = function (req, res) {
     }
     req.getConnection(function(err, connection){
         // what can I do better here?
+        if (err) throw err
         connection.query("insert into issues set ?", data, function(err, results){
             // what can I do better here?
             res.redirect('/issues')
@@ -53,8 +55,8 @@ exports.add = function (req, res) {
 
 exports.delete = function (req, res, next) {
     req.getConnection(function(err, connection){
-        connection.query("delete from isues where id = ?", req.params.id, function(err, results){
-            //if (err) return next(err);
+        connection.query("delete from issues where id = ?", req.params.id, function(err, results){
+        if (err) return next(err);
             res.redirect('/issues')
         });
     });

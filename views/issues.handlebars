@@ -1,8 +1,8 @@
 <h1>Issues</h1>
 
-<a href="/issues/add">Add issue</a>
+<a href="/issues/add" class="button button-default">Add issue</a>
 
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -20,8 +20,8 @@
                 {{heading}}
             </td>
             <td>
-                <a href="/issues/{{id}}">Edit</a>
-                <a href="/issues/delete/{{id}}">Delete</a>
+                <a href="/issues/{{id}}" class="button button-default">Edit</a>
+                <a href="/issues/delete/{{id}}" class="button button-default">Delete</a>
             </td>
         </tr>
         {{/issues}}
