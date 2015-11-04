@@ -12,7 +12,7 @@ var app = express();
 var dbOptions = {
       host: 'localhost',
       user: 'debugger',
-      password: 'passworddd',
+      password: 'password',
       port: 3306,
       database: 'debugging_tips'
 };
